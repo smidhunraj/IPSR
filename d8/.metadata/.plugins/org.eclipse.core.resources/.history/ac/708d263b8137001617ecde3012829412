@@ -1,0 +1,28 @@
+package com.example.androidtest;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+
+public class SecondActivity {
+	protected void onCreate(Bundle bnd) {
+	super.onCreate(bnd);
+	setContentView(R.layout.previous);
+	b=(Button).findViewById(R.id.p);
+	b.setOnClickListener(new View.OnClickListener() {
+		
+		@Override
+		public void onClick(View arg0) {
+			// TODO Auto-generated method stub
+			Intent in=new Intent(getContext(),activity_main.xml);
+			finish();
+			//Intent 
+		}
+	});
+}
+
+public boolean backButtonPressed(){
+	this.finished();
+}
+
+}

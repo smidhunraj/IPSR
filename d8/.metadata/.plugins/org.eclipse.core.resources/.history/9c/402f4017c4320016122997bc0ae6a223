@@ -1,0 +1,16 @@
+package com.example.test;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class SecondActivity extends Activity {
+	
+	
+	@Override
+	protected void onCreate(Bundle bnd)
+	{
+		super.onCreate(bnd);
+		setContentView(layoutResID)
+	}
+
+}

@@ -1,0 +1,98 @@
+package com.example.samplewidgets;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
+public class MainActivity extends Activity {
+	
+	ToggleButton t;
+	TextView tv;
+	RadioButton rb1,rb2;
+	CheckBox chk;
+	RatingBar rat;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        t = (ToggleButton)findViewById(R.id.tb);
+        tv = (TextView)findViewById(R.id.result);
+        chk = (CheckBox)findViewById(R.id.cb);
+        rat = (RatingBar)findViewById(R.id.rb);
+        rb1 = (RadioButton)findViewById(R.id.r1);
+        rb2 = (RadioButton)findViewById(R.id.r2);
+        
+        
+        t.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				if(t.isChecked())
+				{
+					tv.setText("Toggle Button is On");
+				}
+				else
+				{
+					tv.setText("Toggle Button is Off");
+				}
+			}
+		});
+        
+        
+       chk.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				if(chk.isChecked())
+				{
+					tv.setText("Check Box is Checked");
+				}
+				else
+				{
+					tv.setText("Check Box is not Checked");
+				}
+			}
+		});
+       
+      rb1.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				
+					tv.setText("Yes");
+				
+			}
+		});
+      
+      rb2.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				
+					tv.setText("No");
+				
+			}
+		});
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+}
